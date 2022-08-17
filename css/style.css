@@ -16,6 +16,7 @@ li{
     min-width: 300px;
     padding: 5px 10px;
 }
+
 .modal{
     width: 100%;
     background-color: #fff;
@@ -54,15 +55,19 @@ li{
 
 
 @media screen and (min-width: 1024px) {
+    
     body{
         position: relative;
     }
+
+    .container{
+        width: 1024px;
+        margin: 0 auto;
+    }
+
     .modal{
-        position: absolute;
-        top: 50px;
-        left: 250px;
-        width: 150vh;
-        height: 75vh;
+        min-width: 100%;
+        min-height: 100%;
         background-color: #fff;
         padding: 50px 30px;
         border-radius: 5px;
@@ -121,8 +126,6 @@ li{
         width: 150px;
         flex-basis: 0;
     }
-    
-   
 
     .output-btn:nth-child(2n){
         margin-left: 0px;
