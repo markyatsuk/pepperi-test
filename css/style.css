@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(100, 156, 167);
+}
+
+li{
+    list-style: none;
+}
+
+.modal{
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    width: 100vh;
+    height: 75vh;
+    background-color: #fff;
+    padding: 50px 30px;
+    border-radius: 5px;
+}
+
+.usefulArea{
+    margin-top: 50px;
+    width: 75%;
+}
+
+.preInputText{
+    color: rgb(119, 116, 116);
+}
+
+.input-container{
+    display: flex;
+
+}
+
+.output{
+    margin-top: 20px;
+}
+
+.form__input{
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.form__btn{
+    display: block;
+    padding: 3px 10px;
+    margin-left: 15px;
+}
+
+.output__area{
+    width: 100%;
+    min-height: 200px;
+    border: 1px solid grey;
+    padding: 10px 20px;
+}
+
+.output-container{
+    display: flex;
+}
+
+.btn-container{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.output-btn{
+    padding: 3px 10px;
+    width: 150px;
+}
+
+.output-btn + .output-btn{
+    margin-top: 10px;
+}
+
+.list_item{
+    font-size: 17px;
+    letter-spacing: 0.05;
+}
+
+.list_item + .list_item{
+margin-top: 5px;
+}
