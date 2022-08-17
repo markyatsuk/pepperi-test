@@ -16,7 +16,7 @@ const xmlBtn = document.querySelector(".show-xml");
 
 formEl.addEventListener("submit", onFormSubmit);
 sortByName.addEventListener("click", SortByName);
-// sortByValue.addEventListener("click", SortByValue);
+sortByValue.addEventListener("click", SortByValue);
 deleteBtn.addEventListener("click", Delete);
 xmlBtn.addEventListener("click", ShowXMLFormat);
 
@@ -73,31 +73,39 @@ let arrayHistrory = [];
     
 }
 
-//making sorting by name in pair name=value
+//making sort by name in pair name=value
 function SortByName() {
     const sortedArr = arrayHistrory.sort();
-    for (let i = 0; i < sortedArr.length; i++) {
-        listEl.textContent = '';
+    listEl.textContent = '';
         const markup = createLi(sortedArr);
-        // newLi.textContent = sortedArr[i];
-        // listEl.prepend(newLi)
         return listEl.insertAdjacentHTML('beforeend', markup);
-    }
     console.log(sortedArr)
     
 }
 
-// function SortByValue() {
-//     const sortedValueHistory = arrayValueHistory.sort();
-//     for (let i = 0; i < sortedValueHistory.length; i++){
-//         // let splitedEl = arrayHistrory[i].split("=");
-//         // console.log(splitedEl)
-//         // if (splitedEl[1] === sortedValueHistory[i]) {
-//         //     sortedByValueArr.push(arrayHistrory[i])
-//         // }
-//         console.log(sortedByValueArr)
-//     }
-// }
+
+//making sort by value in pair name=value
+function SortByValue() {
+    //sorting array only with values
+    const sortedValueHistory = arrayValueHistory.sort();
+    //making new array for pushing there output values 
+    const sortedByValueArr = [];
+    console.log("sortedValueHistory: ", sortedValueHistory);
+    //going by array with sorted values and check if the pair name=value includes each value
+    for(let i = 0; i < sortedValueHistory.length; i++){
+        arrayHistrory.map(el => {
+            const doesIncludes = el.includes(sortedValueHistory[i]);
+            if(doesIncludes){
+                // we push here element when find them in pairs name=value, so output array will be sorted by values 
+                sortedByValueArr.push(el);
+                return;
+            }
+        })    
+    }
+    listEl.textContent = '';
+        const markup = createLi(sortedByValueArr);
+        return listEl.insertAdjacentHTML('beforeend', markup)
+}
 
 
 //deleting everything in list and clears the array with history
