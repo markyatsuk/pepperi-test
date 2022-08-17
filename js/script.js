@@ -95,10 +95,16 @@ function SortByValue() {
             const doesIncludes = el.includes(sortedValueHistory[i]);
             if(doesIncludes){
                 // we push here element when find them in pairs name=value, so output array will be sorted by values 
+                const doesAlreadyHas = sortedByValueArr.includes(el)
+                if(!doesAlreadyHas){
                 sortedByValueArr.push(el);
                 return;
+                }
+                
+                
             }
         })    
+
     }
     listEl.textContent = ''
     console.log(sortedByValueArr)
