@@ -79,8 +79,6 @@ function SortByName() {
     listEl.textContent = '';
         const markup = createLi(sortedArr);
         return listEl.insertAdjacentHTML('beforeend', markup);
-    console.log(sortedArr)
-    
 }
 
 
@@ -89,7 +87,7 @@ function SortByValue() {
     //sorting array only with values
     const sortedValueHistory = arrayValueHistory.sort();
     //making new array for pushing there output values 
-    const sortedByValueArr = [];
+    let sortedByValueArr = [];
     console.log("sortedValueHistory: ", sortedValueHistory);
     //going by array with sorted values and check if the pair name=value includes each value
     for(let i = 0; i < sortedValueHistory.length; i++){
@@ -102,7 +100,9 @@ function SortByValue() {
             }
         })    
     }
-    listEl.textContent = '';
+    listEl.textContent = ''
+    console.log(sortedByValueArr)
+
         const markup = createLi(sortedByValueArr);
         return listEl.insertAdjacentHTML('beforeend', markup)
 }
@@ -124,7 +124,6 @@ function ShowXMLFormat() {
 function createLi(data) {
     
     return data.map((el) => {
-       
         return `
                 <li class="list_item"> 
                     ${el}
